@@ -1,0 +1,44 @@
+.page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+
+    .tabs {
+        flex: 46px 0 0;
+
+        .ant-tabs-nav {
+            margin-bottom: 0;
+        }
+    }
+    .body {
+        display: flex;
+        flex: 1 0 0;
+     .left {
+         display: flex;
+         flex-flow: column;
+        flex: 160px 0 0;
+        border-right: 1px solid #fafafa;
+
+         & > div:first-child {
+             display: flex;
+             flex: 24px 0 0;
+             padding: 6px;
+             font-size: 16px;
+             justify-content: space-between;
+             border-bottom: 1px solid #ddd;
+         }
+
+     }
+        .right {
+            flex: 1 0 0;
+            display: flex;
+            flex-flow: column;
+            & > div:first-child {
+                display: flex;
+                flex: 38px 0 0;
+            }
+        }
+  }
+}
