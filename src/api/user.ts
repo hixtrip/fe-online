@@ -1,5 +1,14 @@
+/*
+ * @Author: KokoTa
+ * @Date: 2024-03-06 17:23:30
+ * @LastEditTime: 2024-03-06 17:42:03
+ * @LastEditors: KokoTa
+ * @Description: 
+ * @FilePath: \fe-online\src\api\user.ts
+ */
+
 import delay from '../utils/delay'
-interface User {
+export interface User {
   id: string
   name: string
 }

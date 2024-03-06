@@ -1,23 +1,13 @@
-import orgApi from './api/org'
-import userApi from './api/user'
-import './style.css'
+/*
+ * @Author: KokoTa
+ * @Date: 2024-03-06 17:23:30
+ * @LastEditTime: 2024-03-06 19:41:25
+ * @LastEditors: KokoTa
+ * @Description: 
+ * @FilePath: \fe-online\src\main.ts
+ */
+import './style.scss'
+import { createApp } from 'vue'
+import Main from './index.vue'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <h1>Hixtrip FE Online Quiz</h1>
-    <h2>Users:<h2>
-    <p class="read-the-docs" id="user">
-    </p>
-    <h2>Orgs:<h2>
-    <p class="read-the-docs" id="org">
-    </p>
-  </div>
-`
-
-userApi.query({}).then((users) => {
-  document.getElementById('user')!.innerHTML = JSON.stringify(users)
-})
-
-orgApi.query('1').then((users) => {
-  document.getElementById('org')!.innerHTML = JSON.stringify(users)
-})
+createApp(Main).mount('#app')
