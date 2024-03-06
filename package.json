@@ -10,6 +10,13 @@
   },
   "devDependencies": {
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vue": "^3.3.4",
+    "element-plus": "^2.3.14",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.4"
   }
 }
