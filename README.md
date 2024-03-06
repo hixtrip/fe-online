@@ -13,7 +13,7 @@
 1. 目前已经有`src/api/user.ts` 以及 `src/api/org.ts` 两个 API
 2. 需要实现如下效果界面：
 
-![](./docs/preview.jpg)
+![](./docs/preview.png)
 
 > 功能要求：
 - 不限 ```React``` 或者 ```Vue```

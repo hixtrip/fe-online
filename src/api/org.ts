@@ -1,21 +1,29 @@
 import delay from '../utils/delay'
-interface Org {
+
+export interface Org {
   id: string
   name: string
 }
-const getOrgData = (): Org[] => {
+let isFirst = true
+
+function getOrgData(): Org[] {
+  const isEmpty = Math.random() > 0.5
+  if (!isFirst && isEmpty)
+    return []
+
+  isFirst = false
   const count = Math.floor(Math.random() * 20)
   return Array(count)
     .fill(0)
     .map(() => {
       return {
-        id: Math.random() + '',
+        id: `${Math.random()}`,
         name: (Math.random() + 1).toString(36).substring(7),
       }
     })
 }
 
-const query = (parentId: string = '0') => {
+function query(parentId: string = '0') {
   return delay(getOrgData())
 }
 
