@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import OrgTree from "./components/OrgTree.vue";
+import { ref } from "vue";
+import OrgTree from "./components/OrgTree/index.vue";
+import UserTable from "./components/UserTable.vue";
+
+const activeOrgId = ref(null);
 </script>
 
 <template>
@@ -7,7 +11,21 @@ import OrgTree from "./components/OrgTree.vue";
     <aside>
       <OrgTree />
     </aside>
+    <section>
+      <UserTable :org-id="activeOrgId" />
+    </section>
   </main>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped>
+main {
+  width: 100vw;
+  height: 100vh;
+}
+main > aside {
+  flex: 1;
+}
+main > section {
+  flex: 2;
+}
+</style>
