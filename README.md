@@ -7,6 +7,8 @@
 - 完成要求
   - 提交`pull request`
   - 提供页面截图
+  ![](./docs/fe-online.jpg)
+
 
 ## 需求
 
