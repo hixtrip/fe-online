@@ -16,7 +16,7 @@ const getOrgData = (): Org[] => {
 }
 
 const query = (parentId: string = '0') => {
-  return delay(getOrgData())
+  return delay(getOrgData(), 500)
 }
 
 const orgApi = {
