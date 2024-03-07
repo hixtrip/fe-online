@@ -1,18 +1,26 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { inject, ref } from "vue";
 import { type OrgTreeNode, getOrgTreeApi } from "./composition/getOrgTreeApi";
+import { LOAD_USER_KEY } from "@/utils/keys";
 
 export interface SubTreeProps {
   data: OrgTreeNode;
 }
-
 const props = defineProps<SubTreeProps>();
+const getUserList = inject(LOAD_USER_KEY);
+
 const isExpand = ref(false);
 const childrenNodes = ref<OrgTreeNode[]>([]);
 
 async function handleLoadNextLevelData() {
   const parentNode = props.data;
-  if (!parentNode.hasChildren) {
+  /**
+   * 当作为叶子节点时，需要加载user数据
+   */
+  if (!parentNode.hasChildren && getUserList) {
+    getUserList({
+      orgId: parentNode.id,
+    });
     return;
   }
   if (!parentNode.loaded) {
