@@ -1,26 +1,64 @@
-import delay from '../utils/delay'
-interface User {
-  id: string
-  name: string
-}
-const getUserData = (): User[] => {
-  const count = Math.floor(Math.random() * 20)
-  return Array(count)
-    .fill(0)
-    .map(() => {
-      return {
-        id: Math.random() + '',
-        name: (Math.random() + 1).toString(36).substring(7),
-      }
-    })
+import delay from '../utils/delay';
+
+export interface User {
+  id: string;
+  name: string;
+  orgId: string;
 }
 
-const query = (params: Partial<User & { orgId: string }>) => {
-  return delay(getUserData())
-}
+const userData: User[] = [
+  {
+    id: '1',
+    name: '张三',
+    orgId: '3'
+  },
+  {
+    id: '2',
+    name: '李四',
+    orgId: '5'
+  },
+  {
+    id: '3',
+    name: '王五',
+    orgId: '4'
+  },
+  {
+    id: '4',
+    name: '阿飞',
+    orgId: '2'
+  },
+  {
+    id: '4',
+    name: '阿强',
+    orgId: '1'
+  },
+  {
+    id: '4',
+    name: '林彬',
+    orgId: '1'
+  },
+]
 
-const userApi = {
+const getUserData = (name: string = '', orgId: string = '0'): User[] => {
+  let filteredUsers = userData;
+
+  if (orgId) {
+    filteredUsers = filteredUsers.filter(user => user.orgId === orgId);
+  }
+
+  if (name) {
+    filteredUsers = filteredUsers.filter(user => user.name.toLowerCase().includes(name.toLowerCase()));
+  }
+  return filteredUsers;
+};
+
+const query = (params: Partial<{ name: string } & { orgId: string }>) => {
+  const { orgId, name } = params;
+  return delay(getUserData(name, orgId));
+};
+
+export const userApi = {
   query,
-}
+};
 
-export default userApi
+export default userApi;
