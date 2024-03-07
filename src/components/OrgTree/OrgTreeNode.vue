@@ -7,7 +7,7 @@ export interface SubTreeProps {
   data: OrgTreeNode;
 }
 const props = defineProps<SubTreeProps>();
-const getUserList = inject(LOAD_USER_KEY);
+const getUserList = inject(LOAD_USER_KEY, ref(null));
 
 const isExpand = ref(false);
 const childrenNodes = ref<OrgTreeNode[]>([]);
@@ -17,10 +17,12 @@ async function handleLoadNextLevelData() {
   /**
    * 当作为叶子节点时，需要加载user数据
    */
-  if (!parentNode.hasChildren && getUserList) {
-    getUserList({
-      orgId: parentNode.id,
-    });
+  if (!parentNode.hasChildren) {
+    console.log(getUserList.value);
+    getUserList.value &&
+      getUserList.value({
+        orgId: parentNode.id,
+      });
     return;
   }
   if (!parentNode.loaded) {

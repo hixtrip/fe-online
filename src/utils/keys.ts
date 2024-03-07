@@ -1,6 +1,6 @@
 import { UserQuery } from "@/api/user";
-import type { InjectionKey } from "vue";
+import type { InjectionKey, Ref } from "vue";
 
 export const LOAD_USER_KEY = Symbol("getUserList") as InjectionKey<
-  (userQuery: UserQuery) => void
+  Ref<((userQuery: UserQuery) => void) | null>
 >;

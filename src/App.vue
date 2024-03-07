@@ -1,27 +1,32 @@
 <script setup lang="ts">
-import { ref, provide } from "vue";
+import { ref, provide, onMounted } from "vue";
 import OrgTree from "./components/OrgTree/index.vue";
 import UserTable from "./components/UserTable.vue";
 import debounce from "@/utils/debounce";
 import { LOAD_USER_KEY } from "@/utils/keys";
-import { query as getUserList, User, type UserQuery } from "./api/user";
+import { type UserQuery } from "./api/user";
 
 const searchName = ref("");
 
-const tableData = ref<User[]>([]);
-async function getUserData(userQuery: UserQuery) {
-  const data = await getUserList(userQuery);
-  tableData.value = data;
-}
-
-const debounceGetUserDdata = debounce<UserQuery>(getUserData);
+type UserTableIns = InstanceType<typeof UserTable>;
+const userTableEL = ref<UserTableIns>();
+const debounceGetUserDdata = ref<null | ((userQuery: UserQuery) => void)>(null);
+onMounted(() => {
+  if (userTableEL.value) {
+    console.log(userTableEL.value);
+    debounceGetUserDdata.value = debounce<UserQuery>(
+      userTableEL.value.getUserData
+    );
+  }
+});
 function handleSearchInput() {
-  debounceGetUserDdata({
-    name: searchName.value,
-  });
+  debounceGetUserDdata.value &&
+    debounceGetUserDdata.value({
+      name: searchName.value,
+    });
 }
 
-provide(LOAD_USER_KEY, getUserData);
+provide(LOAD_USER_KEY, debounceGetUserDdata);
 </script>
 
 <template>
@@ -37,7 +42,7 @@ provide(LOAD_USER_KEY, getUserData);
           @input="handleSearchInput"
         />
       </el-form-item>
-      <UserTable :data="tableData" />
+      <UserTable ref="userTableEL" />
     </section>
   </main>
 </template>
