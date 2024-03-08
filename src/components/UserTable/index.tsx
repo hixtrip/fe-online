@@ -91,7 +91,7 @@ const UserTable = () => {
           }}
         />
       </div>
-      <ElTable columns={Columns} data={data}/>
+      <ElTable columns={Columns} data={data} loading={loading}/>
     </div>
   );
 };

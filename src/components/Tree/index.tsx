@@ -53,11 +53,11 @@ const TreeItem = (props: TreeItemProps) => {
   const [hasChildren, setHasChildren] = useState(true);
   const [treeItemData, setTreeItemData] = useState<TreeForm>(org)
   const isLoad = useRef(false);
-  
+
   useEffect(() => {
     if (loadData) {
       setHasChildren(true);
-      setTreeItemData({...org, children: []});
+      setTreeItemData({ ...org, children: [] });
     } else {
       if (!org.children || org.children.length === 0) {
         setHasChildren(false);
@@ -73,7 +73,7 @@ const TreeItem = (props: TreeItemProps) => {
     setOpen(!isOpen);
     if (!isLoad.current && loadData) {
       let children = await loadData(treeItemData);
-      setTreeItemData({...treeItemData, children});
+      setTreeItemData({ ...treeItemData, children });
       setHasChildren(children.length > 0);
       isLoad.current = true
     }
@@ -81,46 +81,45 @@ const TreeItem = (props: TreeItemProps) => {
 
   return (
     <li
-          className={`${styles.treeItem} ${disabled ? styles.disabled : ""}`}
-          key={treeItemData.id}
-        >
-          <span
-            className={`${styles.treeIcon} ${
-              isOpen ? styles.treeIconUp : styles.treeIconDown
-            }`}
-            style={{visibility: hasChildren ? "visible" : "hidden" }}
-            onClick={openChildren}
+      className={`${styles.treeItem} ${disabled ? styles.disabled : ""}`}
+      key={treeItemData.id}
+    >
+      <span
+        className={`${styles.treeIcon} ${isOpen ? styles.treeIconUp : styles.treeIconDown
+          }`}
+        style={{ visibility: hasChildren ? "visible" : "hidden" }}
+        onClick={openChildren}
+      />
+      <span
+        className={styles.treeName}
+        onClick={() => {
+          !disabled && nodeClick(treeItemData);
+        }}
+      >
+        {treeItemData.name}
+      </span>
+      {treeItemData?.children && treeItemData?.children?.length > 0 ? (
+        <div className={styles.treeChildren} style={{ display: isOpen ? "block" : "none" }}>
+          <Tree
+            loadData={loadData}
+            data={treeItemData.children}
+            disabled={disabled}
+            nodeClick={nodeClick}
+            isOuter={false}
           />
-          <span
-            className={styles.treeName}
-            onClick={() => {
-              !disabled && nodeClick(treeItemData);
-            }}
-          >
-            {treeItemData.name}
-          </span>
-          {treeItemData?.children && treeItemData?.children?.length > 0 ? (
-            <div className={styles.treeChildren} style={{display: isOpen ? "block" : "none"}}>
-              <Tree
-                loadData={loadData}
-                data={treeItemData.children}
-                disabled={disabled}
-                nodeClick={nodeClick}
-                isOuter={false}
-              />
-            </div>
-          ) : null}
-        </li>
+        </div>
+      ) : null}
+    </li>
   )
 };
 
 // 树形组件单独抽离
-const Tree = ({ data, nodeClick, disabled = false, loadData, isOuter = true}: TreeProps) => {
+const Tree = ({ data, nodeClick, disabled = false, loadData, isOuter = true }: TreeProps) => {
   return (
     <div className={`${styles.treeWrapper} ${isOuter ? styles.outer : ""}`}>
       <ul className={styles.tree}>
-      {data.map((org) =>  <TreeItem key={org.id} org={org} disabled={disabled} nodeClick={nodeClick} loadData={loadData} />)}
-    </ul>
+        {data.map((org) => <TreeItem key={org.id} org={org} disabled={disabled} nodeClick={nodeClick} loadData={loadData} />)}
+      </ul>
     </div>
   );
 };
