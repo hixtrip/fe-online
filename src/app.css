@@ -1,0 +1,18 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
+  display: flex;
+}
+
+.aside {
+  width: 200px;
+  border-right: 1px solid #000;
+}
+
+.main {
+  padding-left: 10px;
+  flex: 1;
+}
