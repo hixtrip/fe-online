@@ -2,6 +2,7 @@ import delay from '../utils/delay'
 interface Org {
   id: string
   name: string
+  leaf?: boolean
 }
 const getOrgData = (): Org[] => {
   const count = Math.floor(Math.random() * 20)
