@@ -4,6 +4,7 @@
     <span @click="activeChange(item)"> {{ item.name }}</span>
     <ul v-if="props.item.children">
       <org-tree-item
+        :activeItem="props.activeItem"
         v-for="child in props.item.children"
         :key="child.id"
         :item="child"
