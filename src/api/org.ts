@@ -1,5 +1,5 @@
 import delay from '../utils/delay'
-interface Org {
+export interface Org {
   id: string
   name: string
 }

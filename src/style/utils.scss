@@ -1,0 +1,168 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.h100p {
+  height: 100%;
+}
+
+.w100p {
+  width: 100%;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-decoration {
+  text-decoration: line-through;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.font-nowarp {
+  white-space: nowrap;
+}
+
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+@each $space in 3, 4, 5, 6, 7, 8, 9{
+  .font-weight-#{$space}00 {
+    margin-left: #{$space}px;
+  }
+}
+
+@each $space in 2, 4, 5, 6, 8, 10, 12, 15, 16, 18, 20, 24, 25, 28, 30 {
+  .ml#{$space} {
+    margin-left: #{$space}px;
+  }
+  .mr#{$space} {
+    margin-right: #{$space}px;
+  }
+  .mt#{$space} {
+    margin-top: #{$space}px;
+  }
+  .mb#{$space} {
+    margin-bottom: #{$space}px;
+  }
+  .m#{$space} {
+    margin: #{$space}px;
+  }
+  .mx#{$space} {
+    margin-left: #{$space}px;
+    margin-right: #{$space}px;
+  }
+  .my#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+  .pl#{$space} {
+    padding-left: #{$space}px;
+  }
+  .pr#{$space} {
+    padding-right: #{$space}px;
+  }
+  .pt#{$space} {
+    padding-top: #{$space}px;
+  }
+  .pb#{$space} {
+    padding-bottom: #{$space}px;
+  }
+  .p#{$space} {
+    padding: #{$space}px;
+  }
+  .px#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+  .py#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+  .fs#{$space} {
+    font-size: #{$space}px;
+  }
+}
+
+.ccc {
+  color: #ccc;
+}
+
+.c999 {
+  color: #999;
+}
+
+.c666 {
+  color: #666;
+}
+
+.c333 {
+  color: #333;
+}
+
+.c000 {
+  color: #000;
+}
+
+.c000-45 {
+  color: rgb(0 0 0 / 45%);
+}
