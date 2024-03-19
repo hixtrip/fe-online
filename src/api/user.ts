@@ -1,26 +1,26 @@
-import delay from '../utils/delay'
-interface User {
-  id: string
-  name: string
-}
-const getUserData = (): User[] => {
-  const count = Math.floor(Math.random() * 20)
-  return Array(count)
-    .fill(0)
-    .map(() => {
-      return {
-        id: Math.random() + '',
-        name: (Math.random() + 1).toString(36).substring(7),
+import delay from "../utils/delay";
+import LocalStorageUtil from "../utils/localStorage";
+
+function getUserList(keys: string, name?: any) {
+  function operation() {
+    let orgData = LocalStorageUtil.getItem("orgData") ?? [];
+    const indexes = keys.split("-");
+    if (orgData.length > 0) {
+      let resultData =
+        orgData
+          .find((_item: any, index: any) => index == indexes[0])
+          .datas.find((_item: any, index: any) => index == indexes[1])
+          ?.people || [];
+      if (name) {
+        resultData = resultData.filter(
+          (i: { name: string | any[] }) => i.name.indexOf(name) != -1
+        );
       }
-    })
+      return resultData;
+    }
+    return [];
+  }
+  return delay(operation());
 }
 
-const query = (params: Partial<User & { orgId: string }>) => {
-  return delay(getUserData())
-}
-
-const userApi = {
-  query,
-}
-
-export default userApi
+export default getUserList;

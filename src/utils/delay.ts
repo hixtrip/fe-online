@@ -1,7 +1,7 @@
-function delay<T>(data: T, time: number = 100): Promise<T> {
+function delay<T>(data: T, time: number = 400): Promise<T> {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(data), time)
-  })
+    setTimeout(() => resolve(data), time);
+  });
 }
 
-export default delay
+export default delay;
