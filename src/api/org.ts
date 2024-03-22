@@ -1,7 +1,7 @@
 import delay from '../utils/delay'
-interface Org {
+export interface Org {
   id: string
-  name: string
+  name: string,
 }
 const getOrgData = (): Org[] => {
   const count = Math.floor(Math.random() * 20)
@@ -19,8 +19,8 @@ const query = (parentId: string = '0') => {
   return delay(getOrgData())
 }
 
-const orgApi = {
-  query,
+export const orgApi = {
+  query
 }
 
-export default orgApi
+

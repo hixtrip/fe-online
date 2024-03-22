@@ -1,5 +1,5 @@
 import delay from '../utils/delay'
-interface User {
+export interface User {
   id: string
   name: string
 }
@@ -19,8 +19,8 @@ const query = (params: Partial<User & { orgId: string }>) => {
   return delay(getUserData())
 }
 
-const userApi = {
+export const userApi = {
   query,
 }
 
-export default userApi
+  
