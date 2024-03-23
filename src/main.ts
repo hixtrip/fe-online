@@ -2,6 +2,18 @@ import orgApi from './api/org'
 import userApi from './api/user'
 import './style.css'
 
+
+
+import Vue from "vue/dist/vue.esm.js"
+import App from "./vue/app.vue"
+new Vue({ 
+  el: '#app',
+  components: { App },
+  template: '<App />'
+})
+/* 
+
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <h1>Hixtrip FE Online Quiz</h1>
@@ -21,3 +33,4 @@ userApi.query({}).then((users) => {
 orgApi.query('1').then((users) => {
   document.getElementById('org')!.innerHTML = JSON.stringify(users)
 })
+ */
