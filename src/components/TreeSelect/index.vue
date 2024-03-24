@@ -29,7 +29,7 @@ watch(orgId, (newValue, oldValue) => {
 });
 
 const emit = defineEmits(['loadData','update:value'])
-const changeExpand = (e,item) => {
+const changeExpand = (e:boolean,item:treeItem) => {
 	item.expand = e
  if(e && !item.children){
 	props.loadData(item)

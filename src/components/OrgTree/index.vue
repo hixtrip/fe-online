@@ -13,7 +13,7 @@ import TreeSelect from '../TreeSelect/index.vue'
 import orgApi from "../../api/org";
 import {type treeItem} from '../TreeSelect/typing'
 
-const props = defineProps<{getOrgId:(orgId)=>void}>()
+const props = defineProps<{getOrgId:(orgId:string)=>void}>()
 
 const state = reactive({
 	orgTreeData:[] as treeItem[],
@@ -21,7 +21,7 @@ const state = reactive({
 })
 
 const initTreeData = async (parentId:string = '0') => {
-	const orgs = await orgApi.query(parentId)
+	const orgs:treeItem[] = await orgApi.query(parentId)
 	state.orgTreeData = orgs
 }
 
