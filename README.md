@@ -12,7 +12,7 @@
 - 根据如下要求实现相关代码
 - 完成要求
   - 提交`pull request`
-  - 提供页面截图：`[在线地址](https://aladdin99.github.io/fe-online/)`
+  - 提供页面截图：[在线地址](https://aladdin99.github.io/fe-online/)
 
 ## 需求
 
