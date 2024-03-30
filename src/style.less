@@ -1,0 +1,59 @@
+// 因为案例这里就没用以下技巧
+// style -> scoped
+// ::v-deep、v-bind、/deep/
+
+
+.ant-tabs-top>.ant-tabs-nav {
+  margin-bottom: 0;
+}
+
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.br {
+  border-right: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+.member-management {
+  &--btn {
+    cursor: pointer;
+    color: #1677ff;
+  }
+
+  &__subtitle {
+    padding: 0 10px;
+    height: 46px;
+    border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+    box-sizing: border-box;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  &__breadcrumbs {
+    span+span {
+      &::before {
+        content: '/';
+        margin: 0 3px;
+      }
+    }
+  }
+
+  &__table {
+    padding: 0 16px;
+  }
+
+}
+
+.user-table {
+  &__search {
+    margin: 15px 0;
+  }
+}
