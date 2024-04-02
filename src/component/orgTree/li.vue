@@ -1,26 +1,27 @@
 <template>
-    <div class="uuli" ref="lli">
+    <div class="uuli" ref="lli" @click.stop="getLiData(liData.id)">
         {{ liData.name }}
-        <div v-if="liData.children" @click="getLiData">有值</div>
         <div v-if="liShowFlag" class="baseli">
             <Ul v-if="liData.children" :ulData="liData.children"></Ul>
         </div>
     </div>
 </template>
 <script setup>
-import { onMounted,ref } from 'vue';
+import { onMounted,ref,getCurrentInstance } from 'vue';
 import Ul from './ul.vue'
-
+const Bus = getCurrentInstance()?.proxy?.Bus;
 const props = defineProps({
     liData:Object
 });
 const lli = ref();
+const nowId = ref(null)
 const liShowFlag = ref(false);
-const num = ref(0)
 const liData = ref(props.liData);
-const getLiData = (item) =>{
-    num.value++;
+// const emit = defineEmits(["change"])
+const getLiData = (id) =>{
+    nowId.value= id
     liShowFlag.value = !liShowFlag.value;
+    Bus.emit("treeChange",nowId.value)
 }
 onMounted(()=>{
 })

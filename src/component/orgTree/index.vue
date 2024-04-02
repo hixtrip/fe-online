@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted,ref } from 'vue'
+import { onMounted,ref,getCurrentInstance } from 'vue'
 import Ul from './ul.vue'
 import {getOrg} from './index'
 import {Org} from './interface'
@@ -34,11 +34,17 @@ const ulData =[{
         id:11
     }]
 }]
+const Bus = getCurrentInstance()?.proxy?.Bus;
+const emit = defineEmits(["change"])
+Bus.on("treeChange",(res:number)=>{
+    emit("change",res)
+})
 // const menuActive = ref(0);
 // // 获取org
 // const changeOrg = debounce(function(item:Org|{}){
 //     Bus.emit("orgChange",item)
 // },300)
+
 const getList = () =>{
     getOrg()?.then((res:Org[]) =>{
         orgList.value = res;
