@@ -97,3 +97,41 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.group {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.group-content {
+  flex: 1;
+  display: flex;
+}
+
+.group-menu {
+  width: 300px;
+  border-right: 1px solid #f9f9f9;
+}
+.group-menu-title {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f9f9f9;
+  padding-left: 16px;
+}
+.ant-tabs-nav {
+  margin-bottom: 0 !important;
+  border-right: 1px solid #f9f9f9;
+}
+
+.group-bread-box {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f9f9f9;
+  padding-left: 16px;
+}
