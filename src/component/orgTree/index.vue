@@ -7,10 +7,8 @@
 <script lang="ts" setup>
 import { onMounted,ref } from 'vue'
 import Ul from './ul.vue'
-// import {debounce} from 'lodash'
 import {getOrg} from './index'
 import {Org} from './interface'
-// const Bus = getCurrentInstance()?.proxy?.Bus;
 const orgList = ref([] as Org[]);
 const ulData =[{
     name:"ccc",
@@ -20,7 +18,11 @@ const ulData =[{
         id:11,
         children:[{
             name:"qqq",
-            id:222
+            id:222,
+            children:[{
+                name:"zzz",
+                id:555
+            }]
         }]
     }]
 },

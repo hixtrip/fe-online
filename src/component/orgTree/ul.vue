@@ -15,6 +15,6 @@ const props =defineProps({
 const ulData = ref(props.ulData);
 
 onMounted(()=>{
-    
+
 })
 </script>
