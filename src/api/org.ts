@@ -1,7 +1,8 @@
 import delay from '../utils/delay'
 interface Org {
   id: string
-  name: string
+  name: string,
+  children:Org[]
 }
 const getOrgData = (): Org[] => {
   const count = Math.floor(Math.random() * 20)
@@ -11,6 +12,12 @@ const getOrgData = (): Org[] => {
       return {
         id: Math.random() + '',
         name: (Math.random() + 1).toString(36).substring(7),
+        children:[
+          {
+            id: Math.random() + '',
+            name: (Math.random() + 1).toString(36).substring(7),
+          }
+        ]
       }
     })
 }

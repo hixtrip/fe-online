@@ -29,6 +29,8 @@ const getTableList = () =>{
 const getMenuList = () =>{
     getOrg()?.then((res) =>{
         orgList.value = res;
+        console.log(orgList.value);
+        
     });
 }
 onMounted(async()=>{
