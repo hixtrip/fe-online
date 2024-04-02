@@ -1,5 +1,5 @@
-import delay from '../utils/delay'
-interface Org {
+import delay from '@/utils/delay'
+export interface Org {
   id: string
   name: string
 }
