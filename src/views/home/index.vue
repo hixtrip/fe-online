@@ -5,6 +5,8 @@
                 <OrgTree :orgList="orgList" class="orgtree" @change="getTreeValue"/>
             </el-col>
             <el-col :span="20">
+                <el-input v-model="keyWord"></el-input>
+                <el-button type="primary" @click="getTableList">搜索</el-button>
                 <UserTable :tableList="tableList"  class="usertable"/>
             </el-col>
         </el-row>
@@ -20,6 +22,7 @@ const getTreeValue = (num:Number) =>{
     getTableList();
 }
 const tableList = ref([])
+const keyWord = ref(null)
 const orgList =ref([])
 const getTableList = () =>{
     getUser()?.then(res =>{
