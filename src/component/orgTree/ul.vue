@@ -11,8 +11,6 @@ import { onMounted } from 'vue'
 const props =defineProps({
     ulData:Array
 })
-
-
 const ulData = ref(props.ulData);
 
 onMounted(()=>{

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref,onMounted,watch} from 'vue'
+import {ref,watch} from 'vue'
 const props = defineProps({
     tableList:Array
 })
@@ -16,6 +16,4 @@ const tableData = ref(props.tableList);
 watch(props, (newValue) => {
       tableData.value  = newValue.tableList
 });
-onMounted(()=>{
-})
 </script>
