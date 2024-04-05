@@ -28,6 +28,36 @@
   - 可以使用 ```UI Framework```, 如 ```ant-design```, ```element-ui```等
   - 如果不用```UI Framework```, 可以直接用原生的```<ul> <li>```, ```<table>``` 实现，不用实现相关的CSS样式, 可以加分。
 
+## 针对上面功能的回答
+
+1. 本项目使用**vite + vue3 + vue-router**来搭建的项目
+2. orgTree 与 userTable 均在 onMounted 声明周期函数通过接口获取数据并进行相应的维护
+   1. 其中orgTree 中实现的功能简单，点击相应的部门，就会跳转地址
+   2. userTable 中有**帅选功能(只能通过成员名的部分字符串来查)**，和删除功能，并能通过点击不同的部门来显示部分名称
+
+​        功能图如下：
+
+![image-20240405141740828](D:\biancheng\fe-online\docs\image-20240405141740828.png)
+
+3 . 针对于异步加载， 本项目中使用的vue-router中对于组件全部采用异步加载方式，详情可以看 **src/router/index.js**代码
+
+4 . 针对于查询，由于数据的设计中org 和 user 数据并无关联， 所以没有对部门经行帅选， 针对关键字搜索，本项目实现这部分功能，其中使用了defineEmit功能 ，详情可以看src/component 中 **UserTable 组件**和其 **子组件Search**。 关于防抖功能实现，可以看**src/utils/debounce.js**文件
+
+整体组件架构图可以看   **架构图.drawio**
+
+
+
+关于数据的其他管理还有两种方案： 
+
+1. 使用状态库vuex 、 pinia管理， 
+2. 状态提升，将数据同一放到父组件来管理
+
+这两种方案都能实现组件间的相互通信
+
+
+
+​	
+
 ## 其他简答题
 
 ### 如何将如下的`JSON`正确解析成 `Object`
