@@ -4,7 +4,7 @@
       <OrgTree />
     </div>
     <div class="right">
-      <UserTable />
+      <RouterView />
     </div>
   </div>
 </template>
@@ -12,6 +12,7 @@
 <script setup>
 import UserTable from "../components/UserTable.vue";
 import OrgTree from "../components/OrgTree.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <style scoped>

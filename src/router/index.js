@@ -4,6 +4,16 @@ const routes = [
   {
     path: "/mm",
     component: () => import("../views/MemberManagemeng.vue"),
+    children: [
+      {
+        path: ":name",
+        component: () => import("../components/UserTable.vue"),
+      },
+      {
+        path: "",
+        redirect: "/mm/user",
+      },
+    ],
   },
   {
     path: "/:pathMatch(.*)*",
