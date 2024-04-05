@@ -16,6 +16,10 @@ const routes = [
     ],
   },
   {
+    path: "/",
+    redirect: "/mm",
+  },
+  {
     path: "/:pathMatch(.*)*",
     component: () => import("../views/404.vue"),
   },
