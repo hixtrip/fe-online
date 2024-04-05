@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="yMA1kFTnIs5IfaScDhWf" name="第 1 页">
-        <mxGraphModel dx="1001" dy="386" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1430" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -28,25 +28,36 @@
                     <mxGeometry x="300" y="430" width="100" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="wrap" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-                    <mxGeometry x="510" y="250" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="470" y="270" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="/mm" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontColor=#FFFFFF;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="14" target="20" edge="1">
+                <mxCell id="15" value="/mm" style="edgeStyle=none;html=1;fontColor=#FFFFFF;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="44" target="20" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="700" y="460" as="targetPoint"/>
+                        <mxPoint x="750" y="510" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="21" value="/tm" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="14" target="22" edge="1">
+                <mxCell id="21" value="/tm" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="44" target="22" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="700" y="510" as="targetPoint"/>
+                        <mxPoint x="820" y="580" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="23" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="14" target="24" edge="1">
+                <mxCell id="23" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="44" target="24" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="810" y="710" as="targetPoint"/>
+                        <mxPoint x="760" y="620" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="46" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;/jm&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=18;" vertex="1" connectable="0" parent="23">
+                    <mxGeometry x="-0.2156" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="" style="edgeStyle=none;html=1;fontSize=18;" edge="1" parent="1" source="14" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="14" value="core" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-                    <mxGeometry x="510" y="480" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="470" y="480" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="路由控制：三种路径 /mm&amp;nbsp; &amp;nbsp;/tm&amp;nbsp; &amp;nbsp; /jm&lt;br&gt;分别代表成员管理、团队管理、职位维护&lt;br&gt;其中只实现了成员管理， 其他都用404组件表示" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="410" y="540" width="270" height="60" as="geometry"/>
@@ -56,32 +67,55 @@
                         <mxPoint x="1060" y="324.239990234375" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="29" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="20" target="28" edge="1">
+                <mxCell id="29" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="32" target="28" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1150" y="490" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="20" target="32">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="20" value="MemberManagement" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="810" y="410" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="900" y="360" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="404" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="810" y="555" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="920" y="540" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" value="404" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="810" y="670" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="980" y="670" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="左右布局" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="825" y="475" width="70" height="30" as="geometry"/>
+                    <mxGeometry x="920" y="430" width="70" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="27" target="30">
+                <mxCell id="31" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="27" target="30" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="orgTree" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1070" y="290" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="userTable" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1070" y="445" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="1260" y="450" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="OrgList" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="1270" y="290" width="120" height="60" as="geometry"/>
+                <mxCell id="38" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="30" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="OrgList" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1260" y="290" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="router-view" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1080" y="430" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="router-link" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1460" y="290" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="orgTree通过在onMounted中调用相应api 来获取自己的数据，并维护" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="940" y="240" width="380" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="uerTable通过在onMounted中调用相应api 来获取自己的数据，并经行维护&lt;br&gt;由于设计的数据与orgTree中的数据并无关联，其实可以增加部门字段来管理，&lt;br&gt;如果这样的话， 可以通过路由信息来经行相互通信" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1150" y="510" width="440" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="routerView" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="480" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
