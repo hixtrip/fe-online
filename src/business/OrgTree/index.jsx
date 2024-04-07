@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import OrgTreeView from "./view.jsx";
 import orgApi from "../../api/org.ts";
-import {debounce} from '../../utils/utils.ts';
+import {throttle} from '../../utils/utils.ts';
 
 function OrgTree(props) {
     const {appCallback} = props
@@ -11,12 +11,12 @@ function OrgTree(props) {
     const [secondShow, setSecondShow] = useState(false)
 
     const _secondShow = () => {
-        if(!secondShow){
-            orgApi.query('1').then(orgList=>{
+        if (!secondShow) {
+            orgApi.query('1').then(orgList => {
                 setOrgDate(orgList);
                 setSecondShow(true)
             })
-        }else {
+        } else {
             setSecondShow(false)
         }
     }
@@ -32,7 +32,7 @@ function OrgTree(props) {
                 break;
             case'secondShow':
                 //点击会请求数据，防止多次点击多次请求数据
-                debounce(_secondShow);
+                throttle(_secondShow);
                 break;
             default:
                 break;
