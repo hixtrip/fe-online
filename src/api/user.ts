@@ -16,6 +16,7 @@ const getUserData = (): User[] => {
 }
 
 const query = (params: Partial<User & { orgId: string }>) => {
+  console.log('================>',params)
   return delay(getUserData())
 }
 
