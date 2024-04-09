@@ -56,7 +56,7 @@ const getJsonObject = async (json: SomeType) => {
 }
 ```
 
-如果是请求获取的 json 字符串，（有人偷懒了，我不说是谁）
+如果是 json 字符串
 
 ```ts
 const json = JSON.parse(jsonString)
@@ -66,14 +66,18 @@ const json = JSON.parse(jsonString)
 
 ```ts
 const id = setInterval(() => {
-    fetch('url')
+    setTimeout(() => getData('url'))
+}, 1000)
+
+const getData = async (url: string) => {
+    await fetch(url)
         .then((res) => {
             /** */
         })
         .catch((err) => {
             /** */
         })
-}, 1000)
+}
 
 // 在组件卸载时
 // vue
