@@ -3,6 +3,10 @@ export interface Org {
     name: string
 }
 
+export interface OrgTree extends Org {
+    children?: Org[]
+}
+
 export interface User {
     id: string
     name: string

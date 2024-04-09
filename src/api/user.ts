@@ -7,15 +7,12 @@ const getUserData = (): User[] => {
         .fill(0)
         .map(() => {
             return {
-                id: Math.random() + '',
+                id: Math.random().toString(),
                 name: (Math.random() + 1).toString(36).substring(7),
             }
         })
 }
 
-// 未使用的变量应当以 _ 代替
-// 这里就不改了
-// const query = (_: Partial<User & { orgId: string }>) => {
 const query = (param?: Partial<User & { orgId: string }>) => {
     return delay(getUserData())
 }

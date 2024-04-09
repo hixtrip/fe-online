@@ -1,3 +1,8 @@
+# 加了点料
+
+提交时输入需要先 `git add filename`，然后`cz`
+是我做的提交消息生成与检查器
+
 # Hixtrip FE Online
 
 ## 准备
