@@ -7,7 +7,7 @@ function OrgUl(props: { list: Org[] }) {
   return (
     <ul>
       {
-        props.list.map(item => <li>{item.name}</li>)
+        props.list.map(item => <li key={item.id}>{item.name}</li>)
       }
     </ul>
   )
