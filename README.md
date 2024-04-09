@@ -8,6 +8,10 @@
   - 提交`pull request`
   - 提供页面截图
 
+> 页面截图如下
+
+![alt text](image.png)
+
 ## 需求
 
 1. 目前已经有`src/api/user.ts` 以及 `src/api/org.ts` 两个 API
