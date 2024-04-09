@@ -3,6 +3,7 @@
         <div class="flex items-center">
             <el-select
                 v-model="selected"
+                filterable
                 placeholder="搜索（win + G）"
                 style="width: 240px"
             >
@@ -45,6 +46,7 @@
 <script setup lang="ts">
 import type { User } from '../api/types'
 import userApi from '../api/user'
+
 const selected = ref()
 const tableData = ref<User[]>([])
 const columns = ref<string[]>([])

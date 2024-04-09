@@ -1,3 +1,9 @@
+
+
+# 成果截图
+
+![](C:\Users\14414\Documents\screenshot.png)
+
 # 加了点料
 
 提交时输入需要先 `git add filename`，然后`cz`
