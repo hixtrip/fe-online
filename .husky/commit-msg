@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "[$0]：正在执行提交消息检查脚本"
+pnpm exec tlzc --path ${1}
