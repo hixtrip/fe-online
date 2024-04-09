@@ -36,6 +36,16 @@
   "userId": 111323290434354540545
 }
 ```
+> 解答代码如下
+```js
+const jsonString = '{"userId": 111323290434354540545}';
+const jsonObject = JSON.parse(jsonString, (key, value) => {
+  if (key === 'userId') {
+    return BigInt(value);
+  }
+  return value;
+});
+```
 ### 前端需要*稳定*每隔`1s`向服务端请求`API`, 请问如何实现？
 
 ### 什么情况下，你会为你的项目引入状态管理库，比如`Redux`, `Pinia`, 可以简述一下起到了什么作用么？
