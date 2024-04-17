@@ -1,8 +1,6 @@
 import delay from '../utils/delay'
-interface User {
-  id: string
-  name: string
-}
+import { User, UserQueryParams } from '@/types/user'
+
 const getUserData = (): User[] => {
   const count = Math.floor(Math.random() * 20)
   return Array(count)
@@ -15,7 +13,7 @@ const getUserData = (): User[] => {
     })
 }
 
-const query = (params: Partial<User & { orgId: string }>) => {
+const query = (params: UserQueryParams) => {
   return delay(getUserData())
 }
 

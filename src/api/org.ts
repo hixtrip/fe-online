@@ -1,8 +1,6 @@
 import delay from '../utils/delay'
-interface Org {
-  id: string
-  name: string
-}
+import { Org } from '@/types/org'
+
 const getOrgData = (): Org[] => {
   const count = Math.floor(Math.random() * 20)
   return Array(count)
