@@ -2,7 +2,7 @@
 
 ## 前端高级/架构师需求
 
-请移步至[v1](https://github.com/hixtrip/fe-online/tree/v1)
+本页测试已经废弃，请移步至[v1](https://github.com/hixtrip/fe-online/tree/v1)
 
 ## 准备
 
