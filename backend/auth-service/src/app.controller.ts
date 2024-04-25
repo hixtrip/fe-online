@@ -11,7 +11,7 @@ export class AppController {
   }
 
   @Post('/info')
-  getInfo(@Body() token: string): LoginVo {
-    return this.appService.getInfo(token);
+  getInfo(@Body() body: { token: string }): LoginVo {
+    return this.appService.getInfo(body.token);
   }
 }
