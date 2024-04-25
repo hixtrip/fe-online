@@ -1,5 +1,22 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import { loadMicroApp } from "qiankun";
+import { onMounted, ref } from "vue";
+
+const tokenAndUserInfo = ref(null);
+
+onMounted(() => {
+  loadMicroApp({
+    name: "auth-app",
+    entry: "//localhost:3002",
+    container: "#authApp",
+    props: {
+      getAuthAppData: (props) => {
+        tokenAndUserInfo.value = props;
+      },
+    },
+  });
+});
 </script>
 
 <template>
@@ -12,6 +29,11 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <h1>我从react子应用得到了数据！！！</h1>
+  <div class="data">
+    {{ JSON.stringify(tokenAndUserInfo) }}
+  </div>
+  <div id="authApp"></div>
 </template>
 
 <style scoped>
@@ -26,5 +48,8 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.data {
+  color: red;
 }
 </style>
