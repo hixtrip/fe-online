@@ -1,10 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState, useContext } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { authLogin } from "@repo/fetch";
+import React from "react";
+import { UserContext } from "./main";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const user = useContext(UserContext);
+  const loginAndGetUserInfo = async () => {
+    const userInfo = await authLogin({ username: "zxy", password: "123456" });
+    user.getAuthAppData &&
+      user.getAuthAppData({
+        userInfo
+      });
+  };
+
+  useEffect(() => {
+    loginAndGetUserInfo();
+  }, []);
 
   return (
     <>
@@ -29,7 +44,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
