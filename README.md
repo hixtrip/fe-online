@@ -27,3 +27,4 @@
 > 其他加分点：如何设计`git flow`规范, 设计`vue`, `react`, `backend`开发规范 etc. 或者请写出关于前端架构的思考，想法。
 
 ## 我的想法
+bff层为新增的`backend/auth-bff`
