@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { AppService, LoginVo } from './app.service';
+import {AppService, LoginInfoVo, LoginVo} from './app.service';
 
 @Controller()
 export class AppController {
@@ -13,5 +13,10 @@ export class AppController {
   @Post('/info')
   getInfo(@Body() token: string): LoginVo {
     return this.appService.getInfo(token);
+  }
+
+  @Post('/loginUserInfo')
+  loginUserInfo(@Body() vo: LoginVo): LoginInfoVo {
+    return this.appService.signAndInfo(vo);
   }
 }
