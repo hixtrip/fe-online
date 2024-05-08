@@ -1,7 +1,7 @@
 import { useState } from 'react'
+import './App.css'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,5 +31,22 @@ function App() {
     </>
   )
 }
+
+fetch('http://localhost:5000/loginGetInfo', {
+  method: 'post',
+  headers: {
+    'Accept': 'application/json,text/plain,*/*',
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: 'username=test&password=12345'
+})
+  .then((response) => {
+    return response.json()
+  }).then((data) => {
+    console.log(data)
+    localStorage.setItem('info', JSON.stringify(data))
+  }).catch((error) => {
+    console.log(error)
+  })
 
 export default App

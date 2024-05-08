@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
+import { JwtModule } from '@nestjs/jwt';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [JwtModule.register({ secret: 'hard!to-guess_secret' })],

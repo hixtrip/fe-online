@@ -6,6 +6,10 @@ export interface LoginVo {
   password: string;
 }
 
+export type tokenUser = {
+  token: string;
+} & LoginVo
+
 @Injectable()
 export class AppService {
   constructor(private readonly jwt: JwtService) {}
