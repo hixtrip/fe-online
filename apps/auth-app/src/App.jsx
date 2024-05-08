@@ -43,8 +43,8 @@ fetch('http://localhost:5000/loginGetInfo', {
   .then((response) => {
     return response.json()
   }).then((data) => {
-    console.log(data)
     localStorage.setItem('info', JSON.stringify(data))
+    window.parent.postMessage({ sourceName: 'test', data: data }, '*')
   }).catch((error) => {
     console.log(error)
   })
