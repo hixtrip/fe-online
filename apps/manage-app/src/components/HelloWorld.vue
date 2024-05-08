@@ -5,6 +5,10 @@ defineProps({
   msg: String,
 })
 
+  function test(){
+    console.log('点击')
+  }
+
 const count = ref(0)
 </script>
 
@@ -12,6 +16,7 @@ const count = ref(0)
   <h1>{{ msg }}</h1>
 
   <div class="card">
+    <button @click="test">点击</button>
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
