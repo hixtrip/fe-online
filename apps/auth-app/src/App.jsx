@@ -1,11 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import React from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function App(props) {
+  const { setGlobalState = () => {} } = props || {};
+  const [count, setCount] = useState(0);
+  const [loginDetail, setLoginDetail] = useState({});
+  const { token, username, password } = loginDetail;
+  useEffect(() => {
+    fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: "exampleUser",
+        password: "examplePassword",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const {
+          token,
+          userInfo: { username, password },
+        } = data || {};
+        setLoginDetail({
+          token,
+          username,
+          password,
+        });
+        setGlobalState({ userInfo: { token, username, password } });
+      });
+  }, []);
   return (
     <>
       <div>
@@ -28,8 +56,12 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <h1>{username ? "已登录" : "未登录"}</h1>
+      <p>{token}</p>
+      <p>{username}</p>
+      <p>{password}</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
